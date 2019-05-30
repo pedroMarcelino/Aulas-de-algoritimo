@@ -43,3 +43,12 @@ body{
 .adj-p{
     text-align: justify;
 }
+
+hr{
+    background-color: #8b8b8b;
+}
+
+.importante{
+    color: red;
+    font-weight: bold;
+}
