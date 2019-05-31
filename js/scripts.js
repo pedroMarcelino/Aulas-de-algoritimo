@@ -302,6 +302,8 @@ function exer4_5() {
     }
 }
 
+/*====================== LISTA 5 ======================*/
+
 function exer5_1() {
     var num = parseInt(prompt("Qual numero deseja multiplicar ?"));
 
@@ -315,38 +317,38 @@ function exer5_1() {
 
 function exer5_2() {
     for (var i = 1; i <= 20; i++) {
-        var total = i**2;
+        var total = i ** 2;
 
         alert("potendia de " + i + " = " + total);
     }
 }
 
-function exer5_3(){
-    for(var i = 1; i <= 5; i++){
+function exer5_3() {
+    for (var i = 1; i <= 5; i++) {
         var num = parseInt(prompt("Digite um numero"));
 
-        if(num % 2 == 0){
+        if (num % 2 == 0) {
             alert("é Par");
-        }else{
+        } else {
             alert("Não é par");
         }
     }
 }
 
-function exer5_4(){
+function exer5_4() {
     var total = 0;
 
-    for(var i = 1; i<= 100; i++){
+    for (var i = 1; i <= 100; i++) {
         total += i;
     }
 
     alert(total);
 }
 
-function exer5_5(){
+function exer5_5() {
     var total = 0;
 
-    for(var i = 1; i<= 10; i++){
+    for (var i = 1; i <= 10; i++) {
         var num = parseInt(prompt("Digite um numero"));
 
         total += num;
@@ -354,12 +356,227 @@ function exer5_5(){
 
     alert("valor total = " + total);
 }
-function exer5_6(){
+function exer5_6() {
     var num = parseInt(prompt("Digite um numero"));
 
-    for(var i = num; i >= 0; i--){
-        if(num % i == 0){
+    for (var i = num; i >= 0; i--) {
+        if (num % i == 0) {
             alert(num + " é um numero divisivel por " + i);
         }
+    }
+}
+
+function exer5_7() {
+    do {
+
+        x = 0;
+
+        var nome = prompt("Digite uma palavra de 6 digitos");
+
+        var ret = nome.length;
+
+        // alert(ret);
+
+        if (ret == 6) {
+            x = 1;
+        }
+
+    } while (x == 0);
+}
+
+/*====================== LISTA 6 ======================*/
+
+function exer6_1() {
+    var num = parseInt(prompt("Digite um numero: "));
+    var total = 0;
+
+    for (var i = (num - 1); i > 0; i--) {
+        if (num % i == 0) {
+            total += i;
+        }
+    }
+
+    if (total == num) {
+        alert("O numero é perfeito")
+    } else {
+        alert("O numero não é perfeito");
+    }
+}
+
+function exer6_2_1() {
+    var num_r = Math.floor(Math.random() * 10 + 1);
+
+    do {
+        var num = parseInt(prompt("digite um numero"));
+        var x = false;
+
+        if (num == num_r) {
+            x = true;
+        }
+
+
+
+    } while (x == false);
+}
+
+function exer6_2_2() {
+    var num_r = Math.floor(Math.random() * 10 + 1);
+    var cont = 0;
+
+    do {
+        var num = parseInt(prompt("digite um numero"));
+        cont++;
+        var x = false;
+
+        if (num == num_r) {
+            x = true;
+        }
+
+
+
+    } while (x == false);
+
+    alert("você tentou " + cont + " vezes")
+}
+
+function exer6_3() {
+    var total = 0;
+
+    for (var i = 25; i <= 200; i++) {
+        total += i;
+    }
+
+    alert("a soma de tudo é :" + total);
+}
+
+function exer6_4() {
+    var nome = prompt("Digite o nome do mais alto: ");
+    var altura = parseInt(prompt("Digite a altura: "));
+    var maior = altura;
+
+    for (var i = 1; i <= 4; i++) {
+        var nome2 = prompt("Digite o nome do mais alto: ");
+        var altura2 = parseInt(prompt("Digite a altura: "));
+
+        if (altura2 > maior) {
+            maior = altura2;
+        }
+    }
+
+    alert("O que tem a aultura maior é o: " + maior);
+}
+
+
+function exer6_5_1() {
+    var nome = prompt("Digite o nome do mais alto: ");
+    var altura = parseInt(prompt("Digite a altura: "));
+    var maior = altura;
+    var nomemaior = nome;
+
+    for (var i = 1; i <= 4; i++) {
+        var nome2 = prompt("Digite o nome do mais alto: ");
+        var altura2 = parseInt(prompt("Digite a altura: "));
+
+        if (altura2 > maior) {
+            maior = altura2;
+            nomemaior = nome2
+        }
+    }
+
+    alert("O nome do maior é: " + nomemaior);
+}
+
+function exer6_5_2() {
+    var nome = prompt("Digite o nome do mais alto: ");
+    var altura = parseInt(prompt("Digite a altura: "));
+    var maior = altura;
+    var nomemaior = nome;
+    var media = altura;
+
+    for (var i = 1; i <= 4; i++) {
+        var nome2 = prompt("Digite o nome do mais alto: ");
+        var altura2 = parseInt(prompt("Digite a altura: "));
+
+        if (altura2 > maior) {
+            maior = altura2;
+            nomemaior = nome2
+        }
+
+        media += altura2;
+
+        media = media / 5;
+    }
+
+    alert("a media de todos é  " + media);
+}
+
+function exer6_5_3() {
+    var nome = prompt("Digite o nome do mais alto: ");
+    var altura = parseInt(prompt("Digite a altura: "));
+    var maior = altura;
+    var nomemaior = nome;
+    var media = altura;
+    var i = 1;
+    do {
+        var x = false;
+        var resp = prompt("Deseja cadastrar mais um ? (S/N)");
+
+        resp.toLowerCase();
+
+        if (resp == "n") {
+            x = true;
+        } else if (resp == "s") {
+            i++;
+            var nome2 = prompt("Digite o nome do mais alto: ");
+            var altura2 = parseInt(prompt("Digite a altura: "));
+
+            if (altura2 > maior) {
+                maior = altura2;
+                nomemaior = nome2
+            }
+
+            media += altura2;
+
+            media = media / i;
+
+        }
+
+    } while (x == false);
+
+    alert("A media é: " + media + "\nO mais alto é: " + nomemaior + "\na altura do mais alto é: " + maior);
+}
+
+function exer6_6() {
+    var palavra = prompt("Digite uma palavra que tenha f ou começa com a letra p");
+
+    var ret = false;
+
+    for (var i = palavra.length; i >= 0; i--) {
+        if (palavra.charAt(0) == "p" || palavra.charAt(i) == "f") {
+            ret = true;
+        }
+    }
+
+    if (ret == true) {
+        alert("A palavras passou");
+    } else {
+        alert("A palavra não entrou");
+    }
+}
+
+function exer6_7() {
+    var num = parseInt(prompt("Digite um numero: "));
+    var cont = 0;
+
+    for (var i = num; i >= 0; i--) {
+        if (num % i == 0) {
+            cont++;
+        }
+    }
+
+    if(cont == 2){
+        alert("o numero é primo");
+    }else if(cont > 2){
+        alert("O numero não é primo");
     }
 }
