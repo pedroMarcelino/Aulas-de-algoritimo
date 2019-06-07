@@ -384,7 +384,7 @@ function exer5_7() {
     } while (x == 0);
 }
 
-/*====================== LISTA 6 ======================*/
+/*====================== LISTA 6 ======================*/exer7_1
 
 function exer6_1() {
     var num = parseInt(prompt("Digite um numero: "));
@@ -574,9 +574,225 @@ function exer6_7() {
         }
     }
 
-    if(cont == 2){
+    if (cont == 2) {
         alert("o numero é primo");
-    }else if(cont > 2){
+    } else if (cont > 2) {
         alert("O numero não é primo");
     }
 }
+
+/*====================== LISTA 7 ======================*/
+
+function exer7_1() {
+    var num = parseInt(prompt("Digite um numero"));
+    var menor = num;
+
+    for (var i = 1; i <= 4; i++) {
+        var num2 = parseInt(prompt("Digite um numero"));
+
+        if (num2 < menor) {
+            menor = num2;
+        }
+    }
+
+    alert(menor);
+}
+
+function exer7_2() {
+    var boll = false
+    do {
+        var num = parseInt(prompt("Digite um numero"));
+
+        if (num == 0)
+            boll = true;
+
+    } while (boll == false);
+}
+
+function exer7_3() {
+    var i = 0;
+    var qt_laco = 0;
+    do {
+        var num_r = Math.floor(Math.random() * 100 + 1);
+
+        if (num_r % 2 == 0) {
+            alert(num_r);
+            i++;
+            console.log(i);
+        }
+
+        qt_laco++;
+    } while (i != 10);
+
+    alert("o laço rodou " + qt_laco + " vezes.");
+}
+
+function exer7_4() {
+    var num = parseInt(prompt("Digite um numero"));
+    var i = 0;
+
+    for (i = num - 1; i >= 1; i--) {
+        num = num * i;
+    }
+
+    alert(num);
+
+}
+
+function exer7_5() {
+    var x = 0;
+    var n1 = parseInt(prompt("Digite o 1º numero de 1 a 60"));
+    var n2 = parseInt(prompt("Digite o 2º numero de 1 a 60"));
+    var n3 = parseInt(prompt("Digite o 3º numero de 1 a 60"));
+
+
+
+
+    do {
+        var r1 = Math.floor(Math.random() * 60 + 1);
+        var r2 = Math.floor(Math.random() * 60 + 1);
+        var r3 = Math.floor(Math.random() * 60 + 1);
+
+
+        x++;
+
+    } while (n1 != r1 || n2 != r2 || n3 != r3);
+
+    alert(x);
+
+}
+
+/*====================== LISTA 8 ======================*/
+
+function exer8_1() {
+    var v = [];
+
+    for (var i = 0; i < 10; i++) {
+        v[i] = "f";
+    }
+
+    alert(v);
+}
+
+function exer8_2() {
+    var num = [];
+    var maior_v = [];
+    var total = 0;
+    var media = 0;
+
+    for (var i = 0; i < 5; i++) {
+        total += num[i] = parseInt(prompt("Digite um numero"));
+    }
+
+    media = total / 5;
+
+    for (var i = 0; i < 5; i++) {
+        if (num[i] > media) {
+            maior_v[i] = num[i];
+        }
+    }
+
+    alert("A media foi : " + media + "\nE os numeros que estão acima é : " + maior_v);
+}
+
+function exer8_3() {
+    var total = 0;
+    for (var i = 0; i < 100; i++) {
+        total += Math.floor(Math.random() * 100 + 1);
+    }
+
+    alert(total / 100);
+}
+
+function exer8_4() {
+    var total = 0;
+    var v = [];
+    var menor_v = [];
+
+    for (var i = 0; i < 100; i++) {
+        v[i] = Math.floor(Math.random() * 100 + 1);
+    }
+
+    for (var i = 90; i < 100; i++) {
+        total += v[i]
+    }
+
+    var media = total / 10;
+
+    media = Math.floor(media);
+
+    for (var i = 0; i < 100; i++) {
+        if (v[i] < media) {
+            menor_v[i] = v[i];
+        }
+    }
+
+    alert("A media foi : " + media + "\nE os numeros que estão abaixo é : " + menor_v);
+}
+
+function exer8_5() {
+    var total = 0;
+    var v = [];
+    var menor_v = [];
+
+    for (var i = 0; i < 100; i++) {
+        v[i] = Math.floor(Math.random() * 100 + 1);
+    }
+
+    for (var i = 90; i < 100; i++) {
+        total += v[i]
+    }
+
+    var media = total / 10;
+
+    media = Math.floor(media);
+
+    var count = 0;
+
+    for (var i = 0; i < 100; i++) {
+        if (v[i] < media) {
+            if (v[i] % 10 == 0) {
+                menor_v[count] = v[i] + "\n";
+                count++;
+            }else{
+                menor_v[count] = v[i];
+                count++;
+            }
+        }
+    }
+
+    alert("A media foi : " + media + "\nE os numeros que estão abaixo é : " + menor_v);
+}
+
+/*====================== LISTA 7 ======================*/
+
+function exer9_1(){
+    var v = [];
+
+    for(var i = 0; i < 3; i++){
+        v[i] = [];
+        for(var j = 0; j < 3; j++){
+            v[i][j] = "x";
+            if(v[i][j] == v[1][1]){
+                v[i][j] = 8;
+            }
+        }   
+    }
+
+    alert(v)
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*====================== LISTA 10 ======================*/
