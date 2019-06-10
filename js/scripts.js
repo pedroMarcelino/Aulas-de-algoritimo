@@ -754,7 +754,7 @@ function exer8_5() {
             if (v[i] % 10 == 0) {
                 menor_v[count] = v[i] + "\n";
                 count++;
-            }else{
+            } else {
                 menor_v[count] = v[i];
                 count++;
             }
@@ -764,35 +764,205 @@ function exer8_5() {
     alert("A media foi : " + media + "\nE os numeros que estão abaixo é : " + menor_v);
 }
 
-/*====================== LISTA 7 ======================*/
+/*====================== LISTA 9 ======================*/
 
-function exer9_1(){
+function exer9_1() {
     var v = [];
 
-    for(var i = 0; i < 3; i++){
+    for (var i = 0; i < 3; i++) {
         v[i] = [];
-        for(var j = 0; j < 3; j++){
-            v[i][j] = "x";
-            if(v[i][j] == v[1][1]){
-                v[i][j] = 8;
-            }
-        }   
+        for (var j = 0; j < 3; j++) {
+            v[i][j] = " x ";
+        }
     }
 
-    alert(v)
-} 
+    v[1][1] = " 8 ";
+
+    for (var i = 0; i < 3; i++) {
+        for (var j = 0; j < 3; j++) {
+            document.write(v[i][j]);
+        }
+        document.write("<br>");
+    }
+}
+
+function exer9_2() {
+    var v = [];
+
+    for (var i = 0; i < 10; i++) {
+        v[i] = [];
+        for (var j = 0; j < 10; j++) {
+            v[i][j] = " X ";
+        }
+    }
+
+    var num1 = Math.floor(Math.random() * 10 + 1);
+    var num2 = Math.floor(Math.random() * 10 + 1);
+    v[num1][num2] = " 8 ";
+
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            document.write(v[i][j]);
+        }
+        document.write("<br>");
+    }
+}
+
+function exer9_3() {
+    var v = [];
+    var linha = [];
+    var val = 0;
+    var total = 0;
+    var maior = 0;
+    var l_maior = 0;
+
+    for (var i = 0; i < 20; i++) {
+        v[i] = [];
+        for (var j = 0; j < 20; j++) {
+            val = Math.floor(Math.random() * (99 - 10 + 1) + 10);
+            v[i][j] = " " + val;
+            linha[i] = val;
+            total += linha[i];
+            linha[i] = total;
+            if (linha[i] > maior) {
+                maior = linha[i];
+                l_maior = i + 1;
+            }
+        }
+        total = 0;
+    }
+
+    for (var i = 0; i < 20; i++) {
+        for (var j = 0; j < 20; j++) {
+            document.write(v[i][j]);
+        }
+        document.write("<br>");
+    }
+
+    for (var i = 0; i < 20; i++) {
+        document.write("<br>");
+        document.write("A soma da linha " + (i + 1) + " é igual a :" + linha[i] + "<br>");
+    }
+
+    document.write("<br>O numero da maior linha é : " + l_maior + ". Com o valor de : " + maior);
+
+}
+
+function exer9_4() {
+    var v = [];
+    var val = 0;
+    var soma = 0;
 
 
+    for (var i = 0; i < 20; i++) {
+        v[i] = [];
+        for (var j = 0; j < 20; j++) {
+            val = Math.floor(Math.random() * (99 - 10 + 1) + 10);
+            v[i][j] = " " + val;
 
+            if (i == j) {
+                soma += val;
+            }
+        }
+    }
 
+    for (var i = 0; i < 20; i++) {
+        for (var j = 0; j < 20; j++) {
+            document.write(v[i][j]);
+        }
+        document.write("<br>");
+    }
 
+    document.write("A soma da diagonal é : " + soma);
 
-
-
-
-
-
-
-
+}
 
 /*====================== LISTA 10 ======================*/
+
+function exer10_1(){
+    function max(x, y){
+        if(x > y){
+          return x;
+        }else if(y > x ){
+          return y;
+        }
+      }
+    
+    var num = parseInt(prompt("Digite o primeiro numero"));
+    var num2 = parseInt(prompt("Digite o segundo numero"));
+
+    alert(max(num,num2));
+}
+
+function exer10_2(){
+    function par_ou_impar(x){
+        if(x%2==0){
+          return "par";
+        }else{
+          return "impar";
+        }
+      }
+
+      var num = parseInt(prompt("Digite o um numero"));
+      
+      alert(par_ou_impar(num));
+}
+
+function exer10_3(){
+    function eh_primo(x){
+        var guarda_ret= 0;
+      
+        for(var cont = 1;cont <= x; cont++){
+          if(x%cont==0){
+            guarda_ret++;
+          }
+        }
+      
+        if(guarda_ret == 2){
+          return "é primo";
+        }else if(guarda_ret > 2){
+          return "nao é primo ";
+        }
+      }
+
+      var num = parseInt(prompt("Digite o um numero"));
+
+      alert(eh_primo(num));
+}
+
+function exer10_4(){
+    function temperatura(x, y){
+        if(y == "C"){
+          var f = x * 1.8 + 32;
+          return f;
+      
+        }else if(y == "F"){
+          var c = (x - 32) / 1.8;
+          return c;
+        }
+      
+      }
+
+      var num = parseInt(prompt("Digite o um numero"));
+      var letra = prompt("Digite o primeiro numero");
+      
+      alert(temperatura(num, letra.toUpperCase()))
+}
+function exer10_5(){
+    function contarLetras(x, y){
+        var get_return = 0;
+      
+        for (var cont=0 ;cont < x.length; cont++) {
+           if(x.charAt(cont) == y){
+              get_return++;
+          }
+        }
+      
+        return get_return;
+      }
+
+      var letra = prompt("Digite a palavra");
+      var letra2 = prompt("Digite a letra");
+      
+      alert(contarLetras(letra.toLowerCase(), letra2.toLowerCase()));
+}
